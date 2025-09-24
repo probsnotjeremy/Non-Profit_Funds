@@ -2,7 +2,7 @@
 SELECT * FROM expenses;
 
 -- Filter by category
-SELECT * FROM expenses WHERE category = 'Events';
+SELECT * FROM expenses WHERE category = 'Supplies';
 
 -- Total spent by category
 SELECT category, SUM(amount) AS total
@@ -44,3 +44,23 @@ FROM events e
 LEFT JOIN donations d ON e.id = d.event_id
 LEFT JOIN expenses x ON e.id = x.event_id
 GROUP BY e.name;
+
+------------------------------------------
+
+SELECT donors.name, SUM(donations.amount) AS total_donated
+FROM donations
+JOIN donors ON donors.id = donations.donor_id
+GROUP BY donors.name
+ORDER BY total_donated;
+
+SELECT donors.name, donations.amount, donations.date, events.name AS event_name
+FROM donations
+JOIN donors ON donors.id = donations.donor_id
+LEFT JOIN events ON events.id = donations.event_id
+WHERE strftime('%Y', donations.date) = '2025';
+
+SELECT donors.name, donations.amount
+FROM donations
+JOIN donors ON donors.id = donations.donor_id
+ORDER BY donations.amount DESC
+LIMIT 1;
