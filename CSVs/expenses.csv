@@ -1,0 +1,11 @@
+id,category,amount,year,event_id
+1,Catering,1200.0,2025,1.0
+2,Travel,500.0,2025,
+3,Marketing,800.0,2025,2.0
+4,Supplies,300.0,2025,2.0
+5,Staff,2500.0,2025,
+6,Venue,1500.0,2025,3.0
+7,Transportation,700.0,2025,3.0
+8,Equipment,400.0,2025,4.0
+9,Permits,200.0,2025,5.0
+10,Catering,600.0,2025,6.0
